@@ -1,0 +1,16 @@
+@import "./Variables";
+@import "./mixin";
+
+@import "./layout/body";
+
+@import "./components/options";
+@import "./components/storage-progress-bar";
+
+//global 
+
+img 
+{
+    width: 100%;
+    height: 100%;
+}
+

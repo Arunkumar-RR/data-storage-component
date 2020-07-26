@@ -1,0 +1,30 @@
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+  background: url(../image/bg-desktop.png) no-repeat;
+  background-position: bottom;
+  height: 100vh;
+  background-color: $color-4;
+  background-position-x: -1px;
+  background-size: 100% 50%;
+  @include flex(row, center, center);
+}
+
+.data-storage-component {
+  width: 85%;
+  @include flex(row, center, none);
+}
+
+@include smartphone {
+  body {
+    background: url(../image/bg-mobile.png) no-repeat;
+    background-size: 100% 150%;
+    height: 100vh;
+    @include flex(column, center, center);
+  }
+
+  .data-storage-component {
+    width: 90%;
+    @include flex(column, center, flex-start);
+  }
+}

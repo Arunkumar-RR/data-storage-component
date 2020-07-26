@@ -1,0 +1,22 @@
+@mixin smartphone {
+    @media  screen and (max-width: 1100px) 
+    {
+      @content;
+    }
+  }
+
+@mixin flex( $direction , $main-axis , $cross-axis )
+{
+    display: flex;
+    flex-flow: $direction  wrap;
+    @if $direction == row
+    {
+      justify-content: $main-axis ;
+      align-items:  $cross-axis;
+    }@else
+    {
+      justify-content: $cross-axis ;
+      align-items:  $main-axis;
+    }
+  
+}

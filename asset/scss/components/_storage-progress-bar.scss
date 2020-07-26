@@ -1,0 +1,157 @@
+.storage-progress-bar
+{
+    background-color: $color-3;
+    padding: 20px 10px;
+    margin: 10px 0 0 0;
+    width: 490px;
+    height: 90px;
+    border-radius: $border-radius-1;
+    align-self: flex-end;
+    .progressbar
+    {
+        @include flex(column,space-evenly,none);
+        margin: 10px 0 0 0;
+        label
+        {
+            color: $color-2 ;
+            margin: 10px 15px;
+            span
+            {
+                color: $color-1;
+                font-weight: $font-weight-2;
+            }
+        }
+    
+        progress
+        {
+            width: 90%;
+            margin: 10px 0 0 15px;
+            background: $color-4 ;
+            border: 2px solid $color-4;
+            border-radius: $border-radius-2;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+                 appearance: none;
+            overflow: hidden;
+            //mozilla browser
+            &::-moz-progress-bar
+            {
+                background: linear-gradient(to right, hsl(6,100%,80%) , hsl(335,100%,65%)) ;
+            }
+            //chrome browser
+            //progress bar background color
+            &::-webkit-progress-bar
+            {
+                background-color: $color-4;
+            }
+            //progress bar value background color
+            &::-webkit-progress-value
+            {
+                background: linear-gradient(to right, hsl(6,100%,80%) , hsl(335,100%,65%));
+
+            }
+            
+           
+        }
+      
+    }
+    
+    .progressbar-totalvalue-indicator
+    {
+        @include flex(row,space-between,none);
+        color: $color-1;
+        font-size: $font-size-3;
+        margin: 10px 35px 0 20px;
+        padding: 0;
+        h6
+        {
+            margin: 0;
+        }
+    }
+    .storage-level-value-indicator
+    {
+        @include flex(row,center,none);
+        width: fit-content;
+        padding: 10px 10px;
+        position: relative;
+        top: -140px;
+        left: 57%;
+        background-color: $color;
+        border-radius: $border-radius-1 $border-radius-1 0 $border-radius-1;
+        h3
+        {
+            font-size:$font-size-1;
+            margin: 0  10px;
+        }
+        small
+        {
+            margin: 15px 5px 10px 5px;
+            font-weight: $font-weight-2;
+            color: $color-2;
+            letter-spacing: 2px;
+        }
+        &::after
+        {
+            content: "";
+            position: absolute;
+            top: 100%; 
+            left: 84%;
+            border-width: 20px 0 0 27.5px;
+            border-style: solid;
+            border-color: $color transparent transparent transparent;
+        }
+    }
+}
+
+@include smartphone
+{
+    .storage-progress-bar
+    {
+        margin: 10px 5px;
+        max-width: 270px;
+        height: 110px;
+        align-self: center;
+        .progressbar
+        {
+            margin: 10px 0 0 0;
+            text-align: center; 
+            progress
+            {
+                align-self: center;
+                width: 80%;
+                margin: 10px 0 0 0px; 
+            }
+        
+        }
+        
+        .progressbar-totalvalue-indicator
+        {
+            margin: 10px 35px;
+        }
+        .storage-level-value-indicator
+        {
+            top:10%;
+            left: 20%;
+            border-radius: $border-radius-1 $border-radius-1 $border-radius-1 $border-radius-1;
+
+            h3
+            {
+                font-size:$font-size-1;
+                margin: 0  10px;
+            }
+            small
+            {
+                margin: 15px 5px 10px 5px;
+                font-weight: $font-weight-2;
+                color: $color-2;
+                letter-spacing: 2px;
+            }
+            &::after
+            {
+                display: none;
+               
+            }
+        }
+    }
+
+}
